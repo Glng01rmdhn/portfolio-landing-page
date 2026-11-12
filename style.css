@@ -1,0 +1,127 @@
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fcf1d0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #60C1E5;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #163b2c;
+}
+
+@keyframes fadeIn {
+  from {    
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.bg-brand-green:hover {
+  box-shadow: 0 8px 20px -4px rgba(42, 131, 95, 0.4);
+}
+
+/* Sembunyikan scrollbar bawaan pada horizontal slider */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+/* ========================================== */
+/* ANIMASI ENTRANCE, SCROLL & HOVER           */
+/* ========================================== */
+
+/* 1. Animasi Otomatis Saat Halaman Baru Kebuka (Hero) */
+@keyframes fadeUpSpring {
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-animate {
+    opacity: 0;
+    animation: fadeUpSpring 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.25s; }
+.delay-300 { animation-delay: 0.4s; }
+
+/* 2. Animasi Muncul Saat Halaman Di-Scroll */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Efek Hover Lebih Halus & Membal pada Tombol & Kartu */
+a, button {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+a:hover, button:hover {
+    transform: translateY(-2px);
+}
+
+a:active, button:active {
+    transform: scale(0.96);
+}
+
+/* 4. Custom Mouse Cursor Follower (Hanya Muncul di Desktop/Laptop) */
+@media (pointer: fine) {
+    .custom-cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 34px;
+        height: 34px;
+        border: 2px solid #2A835F;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    /* Lingkaran membesar & berubah warna saat hover tombol/link/kartu */
+    .custom-cursor-ring.cursor-hover {
+        width: 56px;
+        height: 56px;
+        background-color: rgba(42, 131, 95, 0.15);
+        border-color: #FCF1D0;
+        backdrop-filter: blur(1px);
+    }
+}
