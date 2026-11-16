@@ -2,7 +2,7 @@
 
 Website **Personal Branding Landing Page** yang dirancang untuk menampilkan profil diri, rekam jejak prestasi **Taekwondo tingkat nasional**, serta kemampuan di bidang pengembangan web dan aplikasi (*Web & Mobile Development*).
 
-🔗 **Live Demo:** [portfolio-landing-page.vercel.app](https://galang-portfolio-nine.vercel.app/) *(sesuaikan dengan link Vercel milikmu)*
+🔗 **Live Demo:** [portfolio-landing-page.vercel.app](https://galang-portfolio-nine.vercel.app)
 
 ---
 
